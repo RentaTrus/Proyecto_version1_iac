@@ -1,0 +1,116 @@
+/* styles.css */
+
+/* Tip: si no usas el <link> para Google Fonts, puedes usar @import aquí:
+   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+*/
+
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --accent: #4f46e5; /* índigo */
+  --muted: #6b7280;
+  --radius: 12px;
+  --max-width: 1100px;
+}
+
+* { box-sizing: border-box; }
+html,body {
+  height:100%; 
+  margin:0; 
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg); 
+  color:#111827; 
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.site-header {
+  background: linear-gradient(90deg, rgba(79,70,229,0.06), transparent);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.site-header .container {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding: 1rem 0;
+}
+.logo { margin:0; font-size:1.125rem; font-weight:700; color:var(--accent); }
+.nav a {
+  margin-left:1rem;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+}
+.nav a:hover { color:var(--accent); }
+
+/* Hero */
+.main-content { padding: 2.25rem 0; }
+.hero {
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.95));
+  padding: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.hero h2 { margin:0 0 .5rem 0; font-size:1.75rem; }
+.hero p { margin:0 0 1rem 0; color:var(--muted); }
+.btn {
+  display:inline-block;
+  padding: .6rem 1rem;
+  border-radius: 10px;
+  text-decoration:none;
+  background: var(--accent);
+  color: white;
+  font-weight:700;
+  box-shadow: 0 6px 14px rgba(79,70,229,0.18);
+  margin-top: 1rem;
+}
+
+/* Imagen hero */
+.hero-img {
+  width: 100%;          /* se adapta al ancho del contenedor */
+  max-width: 400px;     /* no será más grande que 400px */
+  border-radius: 12px;
+  margin: 1rem 0;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+/* Cards */
+.cards {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.card {
+  background: var(--card);
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.04);
+}
+.card h3 { margin:0 0 .5rem 0; }
+.card p { margin:0; color:var(--muted); }
+
+/* Footer */
+.site-footer {
+  margin-top: 2rem;
+  padding: 1.25rem 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .cards { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width:600px){
+  .site-header .container { flex-direction:column; align-items:flex-start; gap:.5rem; }
+  .cards { grid-template-columns: 1fr; }
+}
